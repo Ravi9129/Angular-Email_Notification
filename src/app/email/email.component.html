@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-8 my-4">
+    <div align="center">
+      <h4>
+        In each of the following rows of four words across, click on one
+        circle in front of the word that best applies to you.
+      </h4>
+    </div>
+    <div class="row">
+      <div class="col-md-3" *ngFor="let cat of categories">
+        <input class="checkbox-round" (change)="onChange(cat.name, $event.target.checked)" name="{{cat.name}}"
+          type="checkbox" id="{{cat.name}}">
+        <div class="lable-name p-3">
+          <label class="form-check-label lab" for="{{cat.name}}">
+            {{cat.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mt-4 wrapper-box ">
+    <div class="bg-dark text-light">
+      <h2 class=" p-3" style="text-align: justify;">EMAIL APPLICATION</h2>
+    </div>
+    <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+      <div class="form-group">
+        <input type="text" style="width:360px;" class="form-control" class="form-control" name="Firstname"
+          placeholder="Your first name" formControlName="Firstname">
+      </div>
+      <div class="form-group">
+        <input type="text" style="width: 360px;" class="form-control" class="form-control" name="Lastname"
+          placeholder="Your last name" formControlName="Lastname">
+      </div>
+
+      <div class="form-group">
+        <select class="form-select" style="width: 360px;" class="form-control" formControlName="SelectAl">
+          <option selected>Select job title</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <input type="email" style="width: 360px;" class="form-control" name="Email" placeholder="Your email address"
+          formControlName="Email" class="form-control">
+      </div>
+      <div class="dev text-center form-group">
+        <h5 id="emailHelp" style="width: 360px;" class="form-text text-muted">Click Button to submit your name and email
+          address and job
+          title and word compatibility score</h5>
+      </div>
+      <div class="bg-primary text-light">
+        <button type="submit" class="btn btn-primary w-100 text-light sub" [disabled]="FormData.invalid">
+          SEND EMAIL
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

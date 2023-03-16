@@ -1,0 +1,78 @@
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper-box {
+    margin-top: 5%;
+    overflow-x: hidden !important;
+    background-color: rgb(216, 214, 214);
+    width: 30%;
+    float: right;
+    margin-right: 10%;
+
+}
+
+.wrapper-box1 {
+    margin-top: 5%;
+    overflow-x: hidden !important;
+    background-color: rgb(216, 214, 214);
+    width: 50%;
+    float: left;
+    height: 70%;
+    /* margin-right: 10%; */
+    margin-left: 20px;
+
+}
+
+.form-group {
+    margin: 10px;
+    width: 28.5vw;
+}
+
+input {
+    height: 50px;
+}
+
+input::placeholder {
+    font-size: 20px;
+}
+
+.form-text {
+    font-size: 15px;
+}
+
+/* .dev{
+    margin-left: 100px;
+} */
+
+
+.sub {
+    font-size: 25px;
+    font-weight: 650;
+}
+
+.lable-name {
+    margin-left: 25px;
+    margin-top: -40px;
+    font-size: 18px;
+}
+
+.checkbox-round {
+    display: block;
+    width: 50px !important;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.checkbox-round:checked {
+    background-color: green;
+}

@@ -1,0 +1,77 @@
+<div class="wrapper-box">
+  <div class="bg-dark text-light">
+    <h2 class="text-center p-3">EMAIL APPLICATION</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+
+        <div class="form-group">
+          <label for="fullname"></label>
+          <input type="text" class="form-control" name="Firstname" placeholder="Your first name"
+            formControlName="Firstname" />
+        </div>
+
+        <div class="form-group">
+          <label for="fullname"></label>
+          <input type="text" class="form-control" name="Lastname" placeholder="Your last name"
+            formControlName="Lastname" />
+        </div>
+
+        <div class="form-group">
+          <select type="text" class="form-control" formControlName="SelectAl">
+            <!-- <option>Choose job files</option> -->
+            <option>Select job title</option>
+
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="Email"></label>
+          <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
+            placeholder="Your email address" formControlName="Email" />
+        </div>
+        <div class="dev text-center form-group">
+          <h5 id="emailHelp" class="form-text text-muted">Click Button to submit your name and email address and job
+            title and word compatibility score</h5>
+        </div>
+        <div class="bg-primary text-light">
+          <button type="submit" class="btn btn-primary w-100 text-light sub" [disabled]="FormData.invalid">
+            SEND EMAIL
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<form>
+  <div >
+    <h4 style="margin-left: 20px;text-align: center;">In each of the following rows of four words across, click on one
+      circle in front of the word that best applies to you.</h4>
+      <!-- <div *ngFor="let cat of categories"> {{ SelectAl/28 | percent:'2.0-2' }}</div> -->
+  </div>
+  <div class="container mt-5 float-left" style="width:60vw">
+    <div class="row">
+      <div class="col-md-3 p-4" *ngFor="let cat of categories">
+        <div class="">
+          <input class="checkbox-round" style="width: 40px; height:50px;" (change)="onChange(cat.name, $event.target.checked)"
+            name="{{cat.name}}" type="checkbox" id="{{cat.name}}">
+        </div>
+        <div class="lable-name">
+          <label class="form-check-label" style="margin-left:40px ;" for="{{cat.name}}">
+            {{cat.name}}
+          </label>
+        </div> 
+      </div>
+    </div>
+  </div>
+</form>
+
+
+
